@@ -49,7 +49,6 @@ describe WeatherCache do
     it_behaves_like 'cached weather equality' do
       let(:cached_weather) { described_class.read_weather_for(key) }
     end
-
   end
 
   describe '.cache_key' do
