@@ -3,7 +3,9 @@
   <h1>Weather at <%= @weather.postal_code %></h1>
   <h2>Observed <%= time_ago_in_words(@weather.timestamp) %> ago</h2>
   <div class="weather-data">
-    <p><strong>Temperature:</strong> <%= '%.1f' % @weather.temperature %>°F</p>
+    <p><strong>Current Temperature:</strong> <%= '%.1f' % @weather.temperature %>°F</p>
+    <p><strong>Low Temperature:</strong> <%= '%.1f' % @weather.min_temperature %>°F</p>
+    <p><strong>High Temperature:</strong> <%= '%.1f' % @weather.max_temperature %>°F</p>
     <p><strong>Humidity:</strong> <%= @weather.humidity %>%</p>
   </div>
   <%= link_to 'Search Another Address', new_weather_path, class: 'button' %>

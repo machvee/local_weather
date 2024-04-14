@@ -4,7 +4,7 @@ class Address
 
   attr_accessor :street, :city, :state, :postal_code, :country, :latitude, :longitude
 
-  validates :street, :city, :state, presence: true
+  validates :city, :state, presence: true
   validates :postal_code, format: { with: /\A\d{5}(-\d{4})?\z/, message: "must be a valid ZIP code" }
 
   DEFAULT_COUNTRY = 'United States'

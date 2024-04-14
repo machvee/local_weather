@@ -12,6 +12,8 @@ class WeatherController < ApplicationController
 
   def create
     address_query = Address.new(**address_params)
+    return if is_invalid_address(address_query)
+
     weather = WeatherForecaster.call(address_query)
 
     return weather_not_available_at(address_query) if weather.nil?
@@ -42,5 +44,11 @@ class WeatherController < ApplicationController
 
   def weather_not_available_at(location)
     weather_error("Not available at #{location}", flash_type: :notice)
+  end
+
+  def is_invalid_address(address_query)
+    return false if address_query.valid?
+    weather_error(address_query.errors.full_messages.join(", "))
+    true
   end
 end

@@ -1,4 +1,4 @@
 module OpenWeatherMapSettings
   UNITS = 'imperial'
-  API_KEY = '8b48362b9741255c378db6d4fb8d5e44'
+  API_KEY = Rails.application.credentials.open_weather[:api_key]
 end
