@@ -1,4 +1,8 @@
 class WeatherController < ApplicationController
+  # new action:    Displays empty Address form to prompt for address components
+  # create action: Takes user completed Address and uses it as search criteria to the WeatherForecaster
+  #                The result from the WeatherForecaster is Weather data and is fetched/cached by postal_code
+  # show action:   Uses postal_code to fetch most recent Weather data at that location
 
   before_action :find_weather_forecast, only: :show
 
@@ -7,9 +11,14 @@ class WeatherController < ApplicationController
   end
 
   def create
-    weather = WeatherForecaster.call(Address.new(**address_params))
+    address_query = Address.new(**address_params)
+    weather = WeatherForecaster.call(address_query)
 
-    redirect_to action: :show, id: weather
+    return weather_not_available_at(address_query) if weather.nil?
+
+    redirect_to action: :show, id: weather.postal_code
+  rescue StandardError => e
+    weather_error(e.message)
   end
 
   def show; end
@@ -17,10 +26,21 @@ class WeatherController < ApplicationController
   private
 
   def find_weather_forecast
-    @weather = Rails.cache.read(params[:id])
+    @weather = WeatherCache.read_weather_for(params[:id])
+
+    weather_not_available_at(params[:id]) if @weather.nil?
   end
 
   def address_params
     params.require(:address).permit(:street, :city, :state, :postal_code, :country)
+  end
+
+  def weather_error(msg, flash_type: :error)
+    flash[flash_type] = "Weather Forecaster Error: #{msg}"
+    redirect_to new_weather_path
+  end
+
+  def weather_not_available_at(location)
+    weather_error("Not available at #{location}", flash_type: :notice)
   end
 end

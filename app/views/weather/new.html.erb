@@ -1,0 +1,12 @@
+<div class="form-header">
+  <h1>Search for Current Weather Conditions</h1>
+</div>
+<%= simple_form_for @address, url: weather_index_path, html: { class: 'form-container' } do |f| %>
+  <%= f.input :street, required: true, label: 'Street Address', input_html: { class: 'form-control' }, label_html: { class: 'label' } %>
+  <%= f.input :city, required: true, label: 'City', input_html: { class: 'form-control' }, label_html: { class: 'label' } %>
+  <%= f.input :state, required: true, label: 'State', input_html: { class: 'form-control' }, label_html: { class: 'label' } %>
+  <%= f.input :postal_code, required: false, label: 'Zip Code', input_html: { class: 'form-control' }, label_html: { class: 'label' } %>
+
+  <%= f.button :submit, 'Search Address', class: 'button-submit' %>
+<% end %>
+

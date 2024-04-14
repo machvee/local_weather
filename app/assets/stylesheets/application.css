@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+*= require forms
+*= require weather
+
+.flash {
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.flash.notice {
+  background-color: #e8f5e9;
+  border-color: #c8e6c9;
+  color: #256029;
+}
+
+.flash.alert {
+  background-color: #ffebee;
+  border-color: #ffcdd2;
+  color: #b71c1c;
+}
+
+.flash.error {
+  background-color: #ffccbc;
+  border-color: #ffab91;
+  color: #bf360c;
+}

@@ -1,0 +1,10 @@
+<!-- app/views/weathers/show.html.erb -->
+<div class="weather-container">
+  <h1>Weather at <%= @weather.postal_code %></h1>
+  <h2>Observed <%= time_ago_in_words(@weather.timestamp) %> ago</h2>
+  <div class="weather-data">
+    <p><strong>Temperature:</strong> <%= @weather.temperature %>F</p>
+    <p><strong>Humidity:</strong> <%= @weather.humidity %>%</p>
+  </div>
+  <%= link_to 'Search Another Address', new_weather_path, class: 'button' %>
+</div>

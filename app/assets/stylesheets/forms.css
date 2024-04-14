@@ -1,0 +1,72 @@
+/* forms.css */
+
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.button-submit {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.375rem 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.button-submit:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.form-header h1 {
+  font-family: 'Arial', sans-serif; /* Choose a font-family that suits your style */
+  color: #333; /* A neutral, readable color */
+  text-align: center; /* Centers the header text */
+  font-size: 1.5rem; /* A larger size for header text */
+  margin-bottom: 1.5rem; /* Spacing between the header and the form */
+}
+
+/* Add additional styles to give more character to your header */
+.form-header {
+  background-color: #f8f9fa; /* A subtle background color */
+  padding: 20px 0; /* Some padding around the text */
+  border-bottom: 2px solid #dee2e6; /* A border to separate from the form */
+  margin-bottom: 2rem; /* Extra space from the top of the form */
+}
+

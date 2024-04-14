@@ -1,12 +1,12 @@
 class OpenWeatherMapForecaster
   OPEN_WEATHER_MAP_API_URL = 'http://api.openweathermap.org/data/2.5/weather'
   
-  def self.search(postal_code, latitude, longitude)
+  def self.search(valid_address)
     response = HTTParty.get(
       OPEN_WEATHER_MAP_API_URL,
       query: {
-        lat: latitude,
-        lon: longitude,
+        lat: valid_address.latitude,
+        lon: valid_address.longitude,
         appid: OpenWeatherMapSettings::API_KEY,
         units: OpenWeatherMapSettings::UNITS
       }
@@ -18,6 +18,10 @@ class OpenWeatherMapForecaster
     temperature = main_weather_info["temp"]
     humidity = main_weather_info["humidity"]
 
-    Weather.new(postal_code: postal_code, temperature: temperature, humidity: humidity)
+    Weather.new(
+      postal_code: valid_address.key,
+      temperature: temperature,
+      humidity: humidity
+    )
   end
 end
