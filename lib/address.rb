@@ -28,7 +28,7 @@ class Address
   end
 
   def key
-    catented_city_state = -> { "#{@city}_#{@state}".gsub(/\s+/, '_') }
-    @postal_code.present? ? @postal_code : catented_city_state.call
+    catenated_city_state = -> { "#{@city}_#{@state}".gsub(/\s+/, '_') }
+    @postal_code.present? ? @postal_code : catenated_city_state.call
   end
 end
