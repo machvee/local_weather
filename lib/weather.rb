@@ -9,8 +9,4 @@ class Weather
     @humidity = humidity
     @timestamp = Time.current
   end
-
-  def to_param
-    @postal_code
-  end
 end
