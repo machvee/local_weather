@@ -34,10 +34,12 @@ bundle install
 ```
 
 ### 3. Environment Variables
-Copy the provided `.env.development` file into the Rails root directory.  This file contains API keys that should not be tracked in version control systems.
+Copy the provided `env.development` file into the Rails root directory.  This file contains API keys that should not be tracked in version control systems.
+
+**Note**: the file name changes from `env.development` to `.env.development` (with a dot)
 
 ```bash
-cp path/to/your/.env.development .
+cp path/to/your/env.development .env.development
 ```
 
 ### 4. Run Tests
