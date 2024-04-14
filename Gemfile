@@ -54,6 +54,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'rspec-rails'
   gem 'webmock'
+  gem 'dotenv-rails'
 end
 
 group :development do
