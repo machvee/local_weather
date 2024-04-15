@@ -74,6 +74,9 @@ Enter an address using the form provided on the home page. The address can inclu
 
 **Note**: Only the city and state are required fields.  United States addresses only.
 
+### Address Input Screenshot
+![Address Data Entry](docs/images/boston_address_query.png)
+
 ### Weather Data Display
 
 After submitting an address, the weather data for that location will be displayed if available. This includes:
@@ -81,6 +84,9 @@ After submitting an address, the weather data for that location will be displaye
 - Current temperature
 - Low and high temperatures
 - Humidity
+
+### Weather Data Screenshot
+![Weather Data Display](docs/images/boston_weather.png)
 
 ### Caching
 
