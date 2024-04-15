@@ -72,7 +72,7 @@ Enter an address using the form provided on the home page. The address can inclu
 - State
 - Postal Code
 
-**Note**: Only the city and state are required fields.
+**Note**: Only the city and state are required fields.  United States addresses only.
 
 ### Weather Data Display
 
@@ -148,7 +148,6 @@ Represents a physical address and is used across the system for geocoding and fe
 - city: The city part of the address.
 - state: The state part of the address.
 - postal_code: Optional postal code.
-- country: The country part of the address (default: United States)
 - latitude: Latitude obtained from geocoding.
 - longitude: Longitude obtained from geocoding.
 

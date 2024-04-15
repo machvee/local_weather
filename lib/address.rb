@@ -2,14 +2,12 @@ class Address
   include ActiveModel::Model
   include ActiveModel::Validations
 
-  attr_accessor :street, :city, :state, :postal_code, :country, :latitude, :longitude
+  attr_accessor :street, :city, :state, :postal_code, :latitude, :longitude
 
   validates :city, :state, presence: true
   validates :postal_code,
     format: { with: /\A\d{5}(-\d{4})?\z/, message: "must be a valid ZIP code" },
     allow_blank: true
-
-  DEFAULT_COUNTRY = 'United States'
 
   def initialize(attributes = {})
     attributes.each do |name, value|

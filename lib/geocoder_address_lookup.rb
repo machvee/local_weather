@@ -13,7 +13,6 @@ class GeocoderAddressLookup
       city: geocoded_address.city,
       state: geocoded_address.state,
       postal_code: postal_code,
-      country: geocoded_address.country,
       latitude: geocoded_address.latitude,
       longitude: geocoded_address.longitude
     )

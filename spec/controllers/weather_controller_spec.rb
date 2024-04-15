@@ -3,7 +3,7 @@ require 'rails_helper'
 describe WeatherController, type: :controller do
   describe 'POST #create' do
     let(:valid_attributes) {
-      { street: '123 Main St', city: 'Anytown', state: 'Anystate', postal_code: '12345', country: 'USA' }
+      { street: '123 Main St', city: 'Anytown', state: 'Anystate', postal_code: '12345' }
     }
 
     context 'when the address is valid and weather data is available' do

@@ -13,7 +13,6 @@ describe GeocoderAddressLookup do
               'road' => '123 Main St',
               'city' => 'Herndon',
               'state' => 'Virginia',
-              'country' => 'United States of America',
               'postcode' => '12345'
             }
           }
@@ -21,7 +20,6 @@ describe GeocoderAddressLookup do
         allow(geocoded_data).to receive(:street).and_return(geocoded_data.data['components']['road'])
         allow(geocoded_data).to receive(:city).and_return(geocoded_data.data['components']['city'])
         allow(geocoded_data).to receive(:state).and_return(geocoded_data.data['components']['state'])
-        allow(geocoded_data).to receive(:country).and_return(geocoded_data.data['components']['country'])
         allow(geocoded_data).to receive(:latitude).and_return(geocoded_data.data['geometry']['lat'])
         allow(geocoded_data).to receive(:longitude).and_return(geocoded_data.data['geometry']['lng'])
         allow(geocoded_data).to receive(:postal_code).and_return(geocoded_data.data['components']['postcode'])
@@ -36,7 +34,6 @@ describe GeocoderAddressLookup do
         expect(result.city).to eq('Herndon')
         expect(result.state).to eq('Virginia')
         expect(result.postal_code).to eq('12345')
-        expect(result.country).to eq('United States of America')
         expect(result.latitude).to eq(38.96955)
         expect(result.longitude).to eq(-77.3861)
       end
