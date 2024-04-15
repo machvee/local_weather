@@ -1,4 +1,10 @@
 class OpenWeatherMapForecaster
+  #
+  # given a valid, geocoded address, find the associated Weather Map data
+  # using the OpenWeatherMap API.
+  #
+  # API_KEY and UNITS are set in config/initializers/open_weather_map_settings.rb
+  #
   OPEN_WEATHER_MAP_API_URL = 'http://api.openweathermap.org/data/2.5/weather'
   
   def self.search(valid_address)
